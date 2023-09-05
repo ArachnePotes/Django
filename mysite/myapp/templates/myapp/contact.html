@@ -1,0 +1,28 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+  {% for staff in people  %}
+    <div class="mt-4 px-4 py-4 bg-white-300 rounded-xl">
+          <div class="grid grid-col-2 gap-4">
+            <div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+                <img src="{{ staff.image.url }}" class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0"  alt="Carlos" />
+                  <div class="text-center space-y-2 sm:text-left">
+                      <div class="space-y-0.5">
+                                <p class="text-lg text-black font-semibold">
+                                  {{ staff.name }}
+                                </p>
+                                <p class="text-slate-500 font-medium">
+                                  {{ staff.role }}
+                                </p>
+                      </div>
+                      <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+                        <a href="https://wa.me/573163359294">Message</a>
+                      </button>
+                  </div>
+            </div>
+          </div>
+    </div>
+  {% endfor %}
+{% endblock %}

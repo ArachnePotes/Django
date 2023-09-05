@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+    {% for topic in topics %}
+        <div class="px-6 py-3 border-b border-gray-100 rounded-md">
+                    <div class="flex justify-center items-center">
+                        <img src="{{ topic.image.url }}" class="scale-100 object-fill rounded-xl">
+                    </div>
+            <div class="px-6 py-6 flex grid grid-rows-2 gap-4">
+                <div class="text-gray-700 justify-center border-b rounded-md drop-shadow-xg">
+                    <h2 class=" flex justify-center">{{ topic.name }}</h2>
+                    <p class="text-2xl">
+                        {{ topic.descriptionESP }}
+                    </p>
+                    <br><br>
+                    <p class="text-2xl">
+                       {{ topic.descriptionENG }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
